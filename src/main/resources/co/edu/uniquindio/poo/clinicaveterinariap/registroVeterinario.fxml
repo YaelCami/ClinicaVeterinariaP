@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="1046.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.clinicaveterinariap.viewController.RegistroVeterinarioViewController">
+    <children>
+        <Button fx:id="btnRegresar" layoutX="45.0" layoutY="39.0" mnemonicParsing="false" onAction="#onRegresar" text="Regresar" />
+        <Button fx:id="btnEliminar" layoutX="185.0" layoutY="433.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
+        <Button fx:id="btnActualizar" layoutX="907.0" layoutY="191.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
+        <Button fx:id="btnAgregar" layoutX="912.0" layoutY="261.0" mnemonicParsing="false" onAction="#onAgregar" text="Agregar" />
+        <ComboBox fx:id="cbxEspecialidad" layoutX="721.0" layoutY="355.0" prefWidth="150.0" />
+        <TableView fx:id="tbvGestionVeterinarios" layoutX="45.0" layoutY="102.0" prefHeight="291.0" prefWidth="517.0">
+            <columns>
+                <TableColumn fx:id="tbcNombre" prefWidth="114.0" text="Nombre" />
+                <TableColumn fx:id="tbcEspecialidad" prefWidth="94.0" text="Especialidad" />
+                <TableColumn fx:id="tbcNumLicencia" prefWidth="176.0" text="Numero Licencia" />
+                <TableColumn fx:id="tbcId" prefWidth="132.0" text="Id" />
+            </columns>
+        </TableView>
+        <TextField fx:id="txtNombre" layoutX="720.0" layoutY="127.0" />
+        <TextField fx:id="txtNumLicencia" layoutX="720.0" layoutY="191.0" />
+        <Label layoutX="574.0" layoutY="131.0" text="Nombre Completo:" />
+        <Label layoutX="576.0" layoutY="195.0" text="Num Licencia Prof:" />
+        <Label layoutX="608.0" layoutY="359.0" text="Especialidad:" />
+        <Label layoutX="317.0" layoutY="38.0" text="Gestión Veterinarios">
+            <font>
+                <Font size="36.0" />
+            </font>
+        </Label>
+        <TextField fx:id="txtId" layoutX="721.0" layoutY="250.0" />
+        <Label layoutX="608.0" layoutY="254.0" text="Identificación:" />
+    </children>
+</AnchorPane>

@@ -15,12 +15,15 @@ public class Veterinario extends Persona {
 
     }
     public void eliminarConsulta(String id) {
+
         veterinaria.eliminarConsulta(id);
     }
     public void agregarConsulta(Consulta consulta){
+
         veterinaria.agregarConsulta(consulta);
     }
     public void actualizarConsulta(String id, Consulta consulta){
+
         veterinaria.actualizarConsulta(id, consulta);
     }
 

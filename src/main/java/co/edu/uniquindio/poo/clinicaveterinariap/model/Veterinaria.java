@@ -243,24 +243,19 @@ public class Veterinaria {
 
     public boolean agregarVeterinario(Veterinario veterinario) {
         boolean centinela = false;
-        for (Veterinario v : listVeterinarios) {
-            if (!verificarVeterinario(v.getId())) {
-                listVeterinarios.add(v);
-                centinela = true;
-                break;
-            }
+        if (!verificarVeterinario(veterinario.getId())) {
+            listVeterinarios.add(veterinario);
+            centinela = true;
         }
+
         return centinela;
     }
 
     public boolean agregarSecretaria(Secretaria secretaria) {
         boolean centinela = false;
-        for (Secretaria s : listSecretarias) {
-            if (!verificarSecretaria(s.getId())) {
-                listSecretarias.add(s);
-                centinela = true;
-                break;
-            }
+        if (!verificarSecretaria(secretaria.getId())) {
+            listSecretarias.add(secretaria);
+            centinela = true;
         }
         return centinela;
     }
@@ -287,6 +282,16 @@ public class Veterinaria {
             }
         }
         return centinela;
+    }
+    public boolean disponibilidadCitas(Cita citanueva) {
+        boolean disponibilidad = true;
+        for (Cita c : listCitas) {
+            if (c.getFecha().equals(citanueva.getFecha()) && c.getHora().equals(citanueva.getHora()) && c.getVeterinario().equals(citanueva.getVeterinario())) {
+                disponibilidad = false;
+
+            }
+        }
+        return disponibilidad;
     }
 
     public boolean agregarConsulta(Consulta consulta) {
@@ -469,11 +474,19 @@ public class Veterinaria {
     }
 
     public Secretaria buscarSecretaria(String id) {
+        if (id == null) {
+            System.out.println("⚠ El id de búsqueda es null");
+            return null;
+        }
+
         for (Secretaria s : listSecretarias) {
-            if (s.getId().equals(id)) {
+            if (id.equals(s.getId())) {  // comparación segura
                 return s;
             }
         }
+
+        // Si no encontró, avisamos
+        System.out.println("⚠ No se encontró secretaria con id: " + id);
         return null;
     }
 
@@ -573,17 +586,6 @@ public class Veterinaria {
         }
         return listConsultasMascota;
     }
-    public boolean disponibilidadCitas(Cita citanueva) {
-        boolean disponibilidad = true;
-        for (Cita c : listCitas) {
-            if (c.getFecha().equals(citanueva.getFecha()) && c.getHora().equals(citanueva.getHora()) && c.getVeterinario().equals(citanueva.getVeterinario())) {
-                disponibilidad = false;
-
-
-            }
-        }
-        return disponibilidad;
-    }
 
 
 
@@ -666,8 +668,23 @@ public class Veterinaria {
         this.listCitas = listCitas;
     }
 
+    public List<Tratamiento> getListTratamientos() {
+        return listTratamientos;
+    }
 
+    public void setListTratamientos(List<Tratamiento> listTratamientos) {
+        this.listTratamientos = listTratamientos;
+    }
+
+    public Sede getSede() {
+        return sede;
+    }
+
+    public void setSede(Sede sede) {
+        this.sede = sede;
+    }
 }
+
 
 
 

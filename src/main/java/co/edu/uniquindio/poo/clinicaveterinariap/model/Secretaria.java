@@ -91,12 +91,13 @@ public class Secretaria extends Personal{
         return otros;
     }
 
-    public boolean disponibilidadCitas(Cita citanueva){
-        boolean disponiblidad = veterinaria.disponibilidadCitas(citanueva);
-        return disponiblidad;
+    public boolean disponibilidadCitas(Cita citanueva) {
+        Boolean disponibilidad= veterinaria.disponibilidadCitas(citanueva);
+        return disponibilidad;
     }
+
     public List<Consulta> hallarlistaConsultasMascota(String id){
-        return veterinaria.hallarlistaConsultasMascota(id);
+        return  veterinaria.hallarlistaConsultasMascota(id);
     }
 
     public List<Hora> buscarVeterinarioOcupado(String id, LocalDate fecha){
@@ -122,11 +123,6 @@ public class Secretaria extends Personal{
         return listVeterinarioLibre;
     }
 
-
-
-
-
-
     public String getExperiencia() {
         return experiencia;
     }
@@ -141,6 +137,7 @@ public class Secretaria extends Personal{
 
     public void setVeterinaria(Veterinaria veterinaria) {
         this.veterinaria = veterinaria;
+        System.out.println("DEBUG - Se asignó veterinaria" +getNombre()+ veterinaria) ;
     }
 
     public List<Propietario> getListPropietarios() {
@@ -184,6 +181,3 @@ public class Secretaria extends Personal{
                 '}';
     }
 }
-
-
-

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="364.0" prefWidth="361.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.clinicaveterinariap.viewController.ListaMascotaPorEspecieViewController">
+    <children>
+        <Button fx:id="btnRegresar" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onRegresar" prefHeight="24.0" prefWidth="62.0" text="Regresar">
+            <font>
+                <Font size="11.0" />
+            </font></Button>
+        <Label layoutX="98.0" layoutY="143.0" text="Perro">
+            <font>
+                <Font size="18.0" />
+            </font></Label>
+        <Label layoutX="100.0" layoutY="189.0" text="Gato">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="105.0" layoutY="240.0" text="Ave">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="101.0" layoutY="296.0" text="Otro">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="97.0" layoutY="107.0" text="Especie">
+            <font>
+                <Font size="14.0" />
+            </font></Label>
+        <Label layoutX="217.0" layoutY="107.0" text="Cantidad">
+            <font>
+                <Font size="14.0" />
+            </font></Label>
+        <Separator layoutX="178.0" layoutY="107.0" orientation="VERTICAL" prefHeight="234.0" prefWidth="6.0" style="-fx-background-color: #82bcb4;" />
+        <Label fx:id="lblPerro" layoutX="242.0" layoutY="148.0" text="1" />
+        <Label fx:id="lblGato" layoutX="242.0" layoutY="194.0" text="1" />
+        <Label fx:id="lblAve" layoutX="242.0" layoutY="245.0" text="1" />
+        <Label fx:id="lblOtro" layoutX="242.0" layoutY="301.0" text="1" />
+        <Label layoutX="84.0" layoutY="46.0" text="Mascotas Registradas">
+            <font>
+                <Font size="21.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

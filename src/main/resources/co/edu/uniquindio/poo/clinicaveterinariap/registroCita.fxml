@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="481.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.clinicaveterinariap.viewController.RegistroCitaViewController">
+    <children>
+        <ComboBox layoutX="150.0" layoutY="73.0" prefHeight="25.0" prefWidth="149.0" />
+        <DatePicker layoutX="150.0" layoutY="134.0" prefHeight="25.0" prefWidth="120.0" />
+        <ComboBox layoutX="150.0" layoutY="198.0" prefHeight="25.0" prefWidth="120.0" />
+        <Label layoutX="42.0" layoutY="77.0" text="Elije al veterinario:" />
+        <Label layoutX="42.0" layoutY="138.0" text="Elije la fecha:" />
+        <Label layoutX="42.0" layoutY="202.0" text="Escoge la hora:" />
+        <Label layoutX="378.0" layoutY="77.0" text="Ingrese un id de la cita:" />
+        <TextField layoutX="365.0" layoutY="113.0" />
+        <Label layoutX="392.0" layoutY="159.0" text="Escoja la mascota:" />
+        <ChoiceBox layoutX="365.0" layoutY="198.0" prefWidth="150.0" />
+        <ComboBox layoutX="150.0" layoutY="271.0" prefHeight="25.0" prefWidth="149.0" />
+        <Label layoutX="62.0" layoutY="275.0" text="Sede:" />
+    </children>
+</AnchorPane>
