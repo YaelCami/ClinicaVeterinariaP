@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="498.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.clinicaveterinariap.viewController.VeterinarioViewController">
+    <children>
+        <DatePicker fx:id="dtpFecha" layoutX="123.0" layoutY="90.0" prefHeight="25.0" prefWidth="128.0" />
+        <ComboBox fx:id="cbxMascota" layoutX="312.0" layoutY="366.0" prefHeight="25.0" prefWidth="140.0" />
+        <ComboBox fx:id="cbxHora" layoutX="84.0" layoutY="167.0" prefHeight="25.0" prefWidth="128.0" />
+        <Label layoutX="25.0" layoutY="94.0" text="Ingrese la fecha:" />
+        <Label layoutX="68.0" layoutY="138.0" text="Seleccione la hora de la cita:" />
+        <Label layoutX="39.0" layoutY="219.0" text="Id de la cita:" />
+        <Label layoutX="39.0" layoutY="250.0" text="Id de la consulta:" />
+        <Label fx:id="lblIdCita" layoutX="148.0" layoutY="219.0" text="id" />
+        <Label fx:id="lblIdConsulta" layoutX="148.0" layoutY="250.0" text="id" />
+        <Label layoutX="85.0" layoutY="287.0" text="Motivo de la consulta:" />
+        <Label layoutX="350.0" layoutY="94.0" text="Diagnóstico:" />
+        <Label layoutX="358.0" layoutY="331.0" text="Mascota:" />
+        <Label layoutX="349.0" layoutY="250.0" text="Tratamiento:" />
+        <ComboBox fx:id="cbxTratamiento" layoutX="312.0" layoutY="283.0" prefHeight="25.0" prefWidth="140.0" />
+        <TextArea fx:id="txaMotivo" layoutX="53.0" layoutY="321.0" prefHeight="90.0" prefWidth="176.0" />
+        <TextArea fx:id="txaDiagnostico" layoutX="295.0" layoutY="135.0" prefHeight="90.0" prefWidth="176.0" />
+        <Button fx:id="btnRegresar" layoutX="27.0" layoutY="14.0" mnemonicParsing="false" onAction="#onRegresar" text="Regresar" />
+        <Button fx:id="btnRegistrar" layoutX="217.0" layoutY="434.0" mnemonicParsing="false" onAction="#onRegistrar" text="Registrar" />
+        <Label layoutX="156.0" layoutY="39.0" text="Registro Consulta">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="368.0" layoutY="18.0" text="Hola" />
+        <Label fx:id="lblNombre" layoutX="402.0" layoutY="18.0" text="Nombre" />
+    </children>
+</AnchorPane>

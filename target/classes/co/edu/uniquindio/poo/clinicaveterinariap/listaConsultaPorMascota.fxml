@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="425.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.clinicaveterinariap.viewController.ListaConsultaPorMascotaViewController">
+    <children>
+        <Button fx:id="btnRegresar" layoutX="32.0" layoutY="28.0" mnemonicParsing="false" onAction="#onRegresar" text="Regresar" />
+        <TextField fx:id="txtId" layoutX="226.0" layoutY="62.0" />
+        <Label layoutX="228.0" layoutY="32.0" text="Ingrese el id de la mascota:" />
+        <TableView fx:id="tbvConsultas" layoutX="56.0" layoutY="144.0" prefHeight="246.0" prefWidth="489.0">
+            <columns>
+                <TableColumn fx:id="tbcId" prefWidth="75.0" text="Id" />
+                <TableColumn fx:id="tbcMotivo" prefWidth="93.0" text="Motivo" />
+                <TableColumn fx:id="tbcTratamiento" prefWidth="96.0" text="Tratamiento" />
+                <TableColumn fx:id="tbcMedicamento" prefWidth="117.0" text="Medicamento" />
+                <TableColumn fx:id="tbcFecha" prefWidth="107.0" text="Fecha" />
+            </columns>
+        </TableView>
+        <Button fx:id="btnCargar" layoutX="275.0" layoutY="108.0" mnemonicParsing="false" onAction="#onCargar" text="Cargar" />
+    </children>
+</AnchorPane>
