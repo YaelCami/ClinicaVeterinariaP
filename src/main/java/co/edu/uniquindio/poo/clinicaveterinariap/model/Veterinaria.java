@@ -2,6 +2,7 @@ package co.edu.uniquindio.poo.clinicaveterinariap.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Veterinaria {
@@ -28,6 +29,7 @@ public class Veterinaria {
         this.listAseos = new ArrayList<>();
         this.listCitas = new ArrayList<>();
         this.listConsultas = new ArrayList<>();
+        this.listTratamientos = new ArrayList<>();
     }
 
     public boolean verificarPropietario(String id) {
@@ -219,25 +221,22 @@ public class Veterinaria {
 
     public boolean agregarPropietario(Propietario propietario) {
         boolean centinela = false;
-        for (Propietario p : listPropietarios) {
-            if (!verificarPropietario(propietario.getId())) {
-                listPropietarios.add(p);
-                centinela = true;
-                break;
-            }
+        if (!verificarPropietario(propietario.getId())) {
+            listPropietarios.add(propietario);
+            centinela = true;
+
         }
+
         return centinela;
     }
 
     public boolean agregarMascota(Mascota mascota) {
         boolean centinela = false;
-        for (Mascota m : listMascotas) {
-            if (!verificarMascota(m.getId())) {
-                listMascotas.add(m);
-                centinela = true;
-                break;
-            }
+        if (!verificarMascota(mascota.getId())) {
+            listMascotas.add(mascota);
+            centinela = true;
         }
+
         return centinela;
     }
 
@@ -274,13 +273,11 @@ public class Veterinaria {
 
     public boolean agregarCita(Cita cita) {
         boolean centinela = false;
-        for (Cita c : listCitas) {
-            if (!verificarCita(cita.getId()) && disponibilidadCitas(c)) {
-                listCitas.add(c);
-                centinela = true;
-                break;
-            }
+        if (disponibilidadCitas(cita) || !verificarCita(cita.getId())) {
+            listCitas.add(cita);
+            centinela = true;
         }
+
         return centinela;
     }
     public boolean disponibilidadCitas(Cita citanueva) {
@@ -293,27 +290,44 @@ public class Veterinaria {
         }
         return disponibilidad;
     }
+    public List<Hora> disponibilidadVeterinario(String id, LocalDate fecha){
+        List<Hora> todasLasHoras = new ArrayList<>(Arrays.asList(Hora.values()));
+        List<Hora> ocupadas = buscarVeterinarioOcupado(id, fecha);
+
+        todasLasHoras.removeAll(ocupadas);
+
+        System.out.println("DEBUG - Veterinario=" + id + " Fecha=" + fecha);
+        System.out.println("DEBUG - Ocupadas: " + ocupadas);
+        System.out.println("DEBUG - Libres: " + todasLasHoras);
+
+        return todasLasHoras;
+
+    }
+
+    public List<Hora> buscarVeterinarioOcupado(String id, LocalDate fecha){
+        List<Hora> listVeterinarioOcupado = new ArrayList<>();
+        for(Cita c : listCitas){
+            if(c.getFecha().equals(fecha) && c.getVeterinario().getId().equals(id)){
+                listVeterinarioOcupado.add(c.getHora());
+            }
+        }
+        return listVeterinarioOcupado;
+    }
 
     public boolean agregarConsulta(Consulta consulta) {
         boolean centinela = false;
-        for (Consulta co : listConsultas) {
-            if (!verificarConsulta(consulta.getId())) {
-                listConsultas.add(co);
-                centinela = true;
-                break;
-            }
+        if (!verificarConsulta(consulta.getId())) {
+            listConsultas.add(consulta);
+            centinela = true;
         }
         return centinela;
     }
 
     public boolean agregarTratamiento(Tratamiento tratamiento) {
         boolean centinela = false;
-        for (Tratamiento t : listTratamientos) {
-            if (!verificarTratamiento(t.getId())) {
-                listTratamientos.add(t);
-                centinela = true;
-                break;
-            }
+        if (!verificarTratamiento(tratamiento.getId())) {
+            listTratamientos.add(tratamiento);
+            centinela = true;
         }
         return centinela;
     }

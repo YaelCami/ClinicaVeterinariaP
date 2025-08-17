@@ -10,6 +10,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class App extends Application {
     private Stage primaryStage;
@@ -212,20 +213,39 @@ public class App extends Application {
     }
 
     public void inicializarData() {
-        Secretaria secretaria1 = new Secretaria("Susana", "128", 4000000, "3años");
-        secretaria1.setVeterinaria(veterinaria);
+        Secretaria secretaria1 = new Secretaria("Susana", "123", 4000000, "3anios");
         Veterinario veterinario1 = new Veterinario("Pachito", "134", "Gnu vl3", Especialidad.EXOTICOS);
+        Veterinario veterinario2 = new Veterinario("Javier Solano", "890", "gnv340", Especialidad.GRANDES);
+        Veterinario veterinario3 = new Veterinario("Nicola Baquero", "765", "grwe", Especialidad.PEQUENIOS);
+        Veterinario veterinario4 = new Veterinario("Sandra Valencia", "456", "Veterinaria", Especialidad.EXOTICOS);
         veterinario1.setVeterinaria(veterinaria);
-        Propietario propietario1 = new Propietario("Joselito", "333", "312", "Cra 5");
-        Mascota mascota1 = new Mascota("Mordu", "Pitbull", "3", "369", Especie.PERRO, propietario1 );
+        veterinario2.setVeterinaria(veterinaria);
+        veterinario3.setVeterinaria(veterinaria);
+        veterinario4.setVeterinaria(veterinaria);
+        secretaria1.setVeterinaria(veterinaria);
+        Propietario propietario1 = new Propietario("Samuel", "333", "312", "Cra 5");
+        Mascota mascota1 = new Mascota("Palermo", "Caniche", 2, "309", Especie.PERRO, propietario1);
+        Cita cita1 = new Cita("3366", LocalDate.of(2025,8,25), Hora.CUARTACITA4A6PM, Sede.SEDE1, "Ceiva", mascota1, veterinario1);
+        Tratamiento tratamiento1 = new Tratamiento("Paracetamol", "081jk", "una diaria", "2 meses");
+        Tratamiento tratamiento2 = new Tratamiento("Acetaminofen", "39lq", "dos pastillas diarias", "una semana");
+        Tratamiento tratamiento3 = new Tratamiento("Amoxicilina", "6yu", "una dia de por medio", "dos semanas");
+        Tratamiento tratamiento4 = new Tratamiento("ivermectina", "ek90", "diaria", "8 meses");
         veterinaria.agregarPropietario(propietario1);
         veterinaria.agregarVeterinario(veterinario1);
+        veterinaria.agregarVeterinario(veterinario2);
+        veterinaria.agregarVeterinario(veterinario3);
+        veterinaria.agregarVeterinario(veterinario4);
         veterinaria.agregarSecretaria(secretaria1);
+        veterinaria.agregarMascota(mascota1);
+        veterinaria.agregarCita( cita1);
+        veterinaria.agregarTratamiento(tratamiento1);
+        veterinaria.agregarTratamiento(tratamiento2);
+        veterinaria.agregarTratamiento(tratamiento3);
+        veterinaria.agregarTratamiento(tratamiento4);
         System.out.println("DEBUG - Lista de secretarias en veterinaria:");
         for (Secretaria s : veterinaria.getListSecretarias()) {
             System.out.println(" -> " + s.getId() + " - " + s.getNombre());
         }
 
     }
-
 }

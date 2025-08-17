@@ -100,28 +100,8 @@ public class Secretaria extends Personal{
         return  veterinaria.hallarlistaConsultasMascota(id);
     }
 
-    public List<Hora> buscarVeterinarioOcupado(String id, LocalDate fecha){
-        List<Hora> listVeterinarioOcupado = new ArrayList<>();
 
-        for(Cita c : listCitas){
-            if(c.getFecha().equals(fecha) && c.getVeterinario().getId().equals(id)){
-                listVeterinarioOcupado.add(c.getHora());
 
-            }
-        }
-        return listVeterinarioOcupado;
-
-    }
-
-    public List<Hora> disponibilidadVeterinario(String id, LocalDate fecha){
-        List<Hora> listVeterinarioLibre = new ArrayList<>();
-        for(Cita c : listCitas){
-            if(!buscarVeterinarioOcupado(id,fecha).contains(c.getHora())){
-                listVeterinarioLibre.add(c.getHora());
-            }
-        }
-        return listVeterinarioLibre;
-    }
 
     public String getExperiencia() {
         return experiencia;

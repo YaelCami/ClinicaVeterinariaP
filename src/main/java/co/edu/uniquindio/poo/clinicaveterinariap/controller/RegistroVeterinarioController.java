@@ -31,12 +31,7 @@ public class RegistroVeterinarioController {
         app.openCrudSecretaria(secretaria);
     }
     public List<Veterinario> obtenerListaVeterinarios() {
-        if (secretaria.getListVeterinarios() != null) {
-            return secretaria.getListVeterinarios();
-        } else {
-            System.out.println("No se encontro nada en esta lista");
-        }
-        return null;
+        return veterinaria.getListVeterinarios();
     }
     public void setVeterinaria(Veterinaria veterinaria){
         this.veterinaria = veterinaria;

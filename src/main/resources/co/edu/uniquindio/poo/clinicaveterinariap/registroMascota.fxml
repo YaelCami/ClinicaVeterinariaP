@@ -5,10 +5,10 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="1046.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.clinicaveterinariap.viewController.RegistroMascotaViewController">
     <children>
-        <Button fx:id="btnRegresar" layoutX="48.0" layoutY="37.0" mnemonicParsing="false" text="Regresar" />
-        <Button fx:id="btnActualizar" layoutX="944.0" layoutY="290.0" mnemonicParsing="false" text="Actualizar" />
-        <Button fx:id="btnAgregar" layoutX="949.0" layoutY="198.0" mnemonicParsing="false" text="Agregar" />
-        <Button fx:id="btnEliminar" layoutX="283.0" layoutY="434.0" mnemonicParsing="false"  text="Eliminar" />
+        <Button fx:id="btnRegresar" layoutX="48.0" layoutY="37.0" mnemonicParsing="false" onAction="#onRegresar" text="Regresar" />
+        <Button fx:id="btnActualizar" layoutX="944.0" layoutY="290.0" mnemonicParsing="false" onAction="#onActualizar" text="Actualizar" />
+        <Button fx:id="btnAgregar" layoutX="949.0" layoutY="198.0" mnemonicParsing="false" onAction="#onAgregar" text="Agregar" />
+        <Button fx:id="btnEliminar" layoutX="283.0" layoutY="434.0" mnemonicParsing="false" onAction="#onEliminar" text="Eliminar" />
         <ComboBox fx:id="cbxEspecie" layoutX="757.0" layoutY="346.0" prefWidth="150.0" />
         <ComboBox fx:id="cbxPropietario" layoutX="757.0" layoutY="399.0" prefWidth="150.0" />
         <TextField fx:id="txtEdad" layoutX="758.0" layoutY="238.0" />
@@ -20,9 +20,8 @@
                 <TableColumn fx:id="tbcNombre" prefWidth="94.0" text="Nombre" />
                 <TableColumn fx:id="tbcRaza" prefWidth="97.0" text="Raza " />
                 <TableColumn fx:id="tbcEdad" prefWidth="48.0" text="Edad" />
-                <TableColumn fx:id="tbcId" prefWidth="95.0" text="Id" />
-                <TableColumn fx:id="tbcEspecie" prefWidth="100.0" text="Especie" />
-                <TableColumn fx:id="tbcPropietario" prefWidth="122.0" text="Propietario" />
+                <TableColumn fx:id="tbcId" prefWidth="169.0" text="Id" />
+                <TableColumn fx:id="tbcEspecie" prefWidth="148.0" text="Especie" />
             </columns>
         </TableView>
         <Label layoutX="666.0" layoutY="135.0" text="Nombre:" />

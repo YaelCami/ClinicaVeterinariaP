@@ -100,7 +100,7 @@ public class VeterinarioViewController {
     }
 
     public void initialize(){
-
+        cargarEventos();
         cbxMascota.setConverter(new StringConverter<Mascota>() {
             @Override
             public String toString(Mascota mascota) {
@@ -126,6 +126,23 @@ public class VeterinarioViewController {
         });
 
     }
+
+    private void cargarEventos() {
+        dtpFecha.valueProperty().addListener((obs, oldDate, newDate) -> {
+            if (newDate != null && veterinarioController != null && veterinario.getId() != null) {
+                List<Hora> horas = veterinarioController.obtenerHorasVeterinario(veterinario.getId(), newDate);
+                cbxHora.getItems().setAll(horas);
+            }
+        });
+        cbxHora.valueProperty().addListener((obs, oldValue, horaSeleccionada) -> {
+            actualizarId();
+        });
+    }
+    private void actualizarId() {
+        lblIdCita.setText(veterinarioController.obtenerIdCita(veterinario, dtpFecha.getValue(), cbxHora.getValue()));
+        lblIdConsulta.setText(veterinarioController.obtenerIdCita(veterinario, dtpFecha.getValue(), cbxHora.getValue()));
+    }
+
 
     public void setVeterinario(Veterinario veterinario) {
         this.veterinario = veterinario;

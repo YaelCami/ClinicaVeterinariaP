@@ -158,7 +158,7 @@ public class RegistroVeterinarioViewController {
             listVeterinarios.setAll(veterinarios);
             tbvGestionVeterinarios.setItems(listVeterinarios);
         } else {
-            tbvGestionVeterinarios.setItems(listVeterinarios);
+            tbvGestionVeterinarios.getItems().clear();
         }
     }
 
